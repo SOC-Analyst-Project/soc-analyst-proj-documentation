@@ -1,3 +1,4 @@
+see also [[OPNsense log forwarding]]
 
 ![[Pasted image 20251118142052.png]]
 
