@@ -1,3 +1,5 @@
+Why obsolete: See [[OPNsense log forward to Wazuh via agent]] 
+
 
 ![[Pasted image 20251119202221.png]]
 ![[Pasted image 20251119211429.png]]
