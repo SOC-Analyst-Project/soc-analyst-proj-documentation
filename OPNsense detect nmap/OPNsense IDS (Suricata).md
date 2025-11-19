@@ -1,4 +1,4 @@
-see also [[OPNsense log forwarding]]
+see also [[OPNsense log forwarding to Wazuh]]
 
 ![[Pasted image 20251118142052.png]]
 
