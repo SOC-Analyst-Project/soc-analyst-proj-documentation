@@ -6,3 +6,6 @@ Install the plugin
 refresh the page, and Wazuh Agent will appear under "services"
 ![[Pasted image 20251120204443.png]]
 
+It can be see in Wazuh dashboard too. 
+
+![[Pasted image 20251120205055.png]]
