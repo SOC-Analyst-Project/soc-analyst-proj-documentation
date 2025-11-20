@@ -4,3 +4,5 @@ https://news.fmisec.com/11-integrating-wazuh-agent-with-opnsense-for-enhanced-lo
 Install the plugin
 ![[Pasted image 20251119224447.png]]
 refresh the page, and Wazuh Agent will appear under "services"
+![[Pasted image 20251120204443.png]]
+
