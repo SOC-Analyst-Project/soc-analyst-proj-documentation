@@ -9,4 +9,4 @@
 8. Done. Check change on github repo
 
 # Required: Obsidian setup for attachments location
-![[Pasted image 20251119205016.png]]
+![[Pasted image 20251119205016.png|525]]
