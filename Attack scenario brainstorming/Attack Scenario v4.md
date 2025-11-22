@@ -1,5 +1,5 @@
 6.1-6.5 only
-# **6.1 Network Reconnaissance (Nmap)**
+#  **6.1 Network Reconnaissance (Nmap)**
 
 ## **Goal**
 
@@ -319,6 +319,8 @@ hydra -L users.txt -P passwords.txt rdp://192.168.10.50
 - Excessive lockouts interrupt brute-force unless policy is relaxed.
     
 - If Wazuh agent on POS is not forwarding the Security channel, Splunk shows no RDP failures.
+
+
 
 
 
