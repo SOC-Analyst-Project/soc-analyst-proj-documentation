@@ -11,8 +11,5 @@
 # Required: Obsidian setup for attachments location
 ![[Pasted image 20251119205016.png|525]]
 # Recommended: 
-Pull every 5 minute, commit & sync one minute after edit
-<<<<<<< HEAD
-![[Pasted image 20251122201519.png]]
-=======
->>>>>>> origin/main
+Pull every 5 minute, commit & sync 5 minute after edit
+![[Pasted image 20251122202055.png]]
