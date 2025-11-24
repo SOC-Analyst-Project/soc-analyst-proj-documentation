@@ -8,6 +8,24 @@
 7. Ctrl+P Git commit and sync, Authenticate using git on windows. if anything goes wrong do to this doc (https://publish.obsidian.md/git-doc/Authentication)
 8. Done. Check change on github repo
 
+(Find obsidian vault in explorer and open it with vscode)
+.gitignore
+```
+"Obsidian Git Sync Setup.md"
+```
+
+Alternatively, use this directly
+```
+echo "\"Obsidian Git Sync Setup.md\"" >> .gitignore
+```
+
+```
+git commit -m "Update .gitignore and untrack files"
+git check-ignore -v Obsidian\ Git\ Sync\ Setup.md
+git push
+```
+
+
 # Required: Obsidian setup for attachments location
 ![[Pasted image 20251119205016.png|525]]
 # Recommended: 
