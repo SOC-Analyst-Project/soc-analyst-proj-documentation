@@ -5,7 +5,7 @@
 4. Ctrl+P in obsidian, Git Clone this URL https://github.com/SOC-Analyst-Project/soc-analyst-proj-documentation.git
 5. Choose an empty folder on obsidian
 6. restart obsidian
-7. Ctrl+P Git commit and sync, Authenticate using git on windows. if anything goes wrong do to this doc (https://publish.obsidian.md/git-doc/Authentication)
+7. Ctrl+P Git commit and sync, Authenticate using git on windows. if anything goes wrong go to this doc (https://publish.obsidian.md/git-doc/Authentication)
 8. Done. Check change on github repo
 
 (Find obsidian vault in explorer and open it with vscode)
