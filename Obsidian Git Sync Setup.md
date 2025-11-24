@@ -8,6 +8,14 @@
 7. Ctrl+P Git commit and sync, Authenticate using git on windows. if anything goes wrong go to this doc (https://publish.obsidian.md/git-doc/Authentication)
 8. Done. Check change on github repo
 
+
+# Required: Obsidian setup for attachments location
+![[Pasted image 20251119205016.png|525]]
+# Recommended: 
+Pull every 5 minute, commit & sync 5 minute after edit
+![[Pasted image 20251122202055.png]]
+
+## Troubleshoot: Merge error "Obsidian Git Sync Setup"
 (Find obsidian vault in explorer and open it with vscode)
 .gitignore
 ```
@@ -24,10 +32,3 @@ git commit -m "Update .gitignore and untrack files"
 git check-ignore -v Obsidian\ Git\ Sync\ Setup.md
 git push
 ```
-
-
-# Required: Obsidian setup for attachments location
-![[Pasted image 20251119205016.png|525]]
-# Recommended: 
-Pull every 5 minute, commit & sync 5 minute after edit
-![[Pasted image 20251122202055.png]]
