@@ -1,0 +1,2385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--generated with nmap.xsl - version 0.9c by Benjamin Erb - http://www.benjamin-erb.de/nmap_xsl.php --><style type="text/css">
+/* stylesheet print */
+@media print
+{
+  #menu {
+    display:none;
+  }
+
+  body {
+    font-family: Verdana, Helvetica, sans-serif;
+  }
+  
+  h1 {
+    font-size: 13pt;
+    font-weight:bold;
+    margin:4pt 0pt 0pt 0pt;
+    padding:0;
+  }
+
+  h2 {
+    font-size: 12pt;
+    font-weight:bold;
+    margin:3pt 0pt 0pt 0pt;
+    padding:0;
+  }
+
+  h3, a:link, a:visited {
+    font-size: 9pt;
+    font-weight:bold;
+    margin:1pt 0pt 0pt 20pt;
+    padding:0;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  p,ul {
+    font-size: 9pt;
+    margin:1pt 0pt 8pt 40pt;
+    padding:0;
+    text-align:left;
+  }
+
+  li {
+    font-size: 9pt;
+    margin:0;
+    padding:0;
+    text-align:left;
+  }
+
+  table {
+    margin:1pt 0pt 8pt 40pt;
+    border:0px;
+    width:90%
+  }
+
+  td {
+    border:0px;
+    border-top:1px solid black;
+    font-size: 9pt;
+  }
+
+  .head td {
+    border:0px;
+    font-weight:bold;
+    font-size: 9pt;
+  }
+  .noprint { display: none; }
+}
+
+/* stylesheet screen */
+@media screen
+{
+  body {
+    font-family: Verdana, Helvetica, sans-serif;
+    margin: 0px;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-align: center;
+  }
+
+  #container {
+    text-align:left;
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  h1 {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 14pt;
+    color: #FFFFFF;
+    background-color:#2A0D45;
+    margin:10px 0px 0px 0px;
+    padding:5px 4px 5px 4px;
+    width: 100%;
+    border:1px solid black;
+    text-align: left;
+  }
+
+  h2 {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 11pt;
+    color: #000000;
+    margin:30px 0px 0px 0px;
+    padding:4px;
+    width: 100%;
+    background-color:#F0F8FF;
+    text-align: left;
+  }
+
+  h2.green {
+    color: #000000;
+    background-color:#CCFFCC;
+    border-color:#006400;
+  }
+
+  h2.red {
+    color: #000000;
+    background-color:#FFCCCC;
+    border-color:#8B0000;
+  }
+   
+  h3 {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 10pt;
+    color:#000000;
+    background-color: #FFFFFF;
+    width: 75%;
+    text-align: left;
+  }
+
+  p {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #FFFFFF;
+    width: 75%;
+    text-align: left;
+  }
+
+  p i {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #CCCCCC;
+  }
+
+  ul {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #FFFFFF;
+    width: 75%;
+    text-align: left;
+  }
+
+  a {
+    font-family: Verdana, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 8pt;
+    color:#000000;
+    font-weight:bold;
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  li a {
+    font-family: Verdana, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 10pt;
+    color:#000000;
+    font-weight:bold;
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a.up {
+      color:#006400;
+  }
+
+  table {
+    width: 80%;
+    border:0px;
+    color: #000000;
+    background-color: #000000;
+    margin:10px;
+  }
+
+  tr {
+    vertical-align:top;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #FFFFFF;
+  }
+
+  tr.head {
+    background-color: #E1E1E1;
+    color: #000000;
+    font-weight:bold;
+  }
+
+  tr.open {
+    background-color: #CCFFCC;
+    color: #000000;
+  }
+	
+  tr.script {
+    background-color: #EFFFF7;
+    color: #000000;
+  }
+
+  tr.filtered {
+    background-color: #F2F2F2;
+    color: #000000;
+  }
+
+  tr.closed {
+    background-color: #F2F2F2;
+    color: #000000;
+  }
+    
+  td {
+    padding:2px;
+  }
+        
+  #menu li {
+    display         : inline;
+    margin          : 0;
+    /*margin-right    : 10px;*/
+    padding         : 0;
+    list-style-type : none;
+  }    
+ 
+  #menubox {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 120px;
+  }
+  
+  
+  
+  /* This section handle's IE's refusal to honor the fixed CSS attribute */
+  
+  * html div#menubox {
+    position: absolute;
+    top:expression(eval(
+      document.compatMode && document.compatMode=='CSS1Compat') ?
+      documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight) 
+      : document.body.scrollTop +(document.body.clientHeight-this.clientHeight));
+  }
+  /* This fixes the jerky effect when scrolling in IE*/
+  * html,* html body {
+    background: #fff url(nosuchfile) fixed;
+  }
+
+  
+ 
+  .up {
+    color: #000000;
+    background-color:#CCFFCC;
+  }
+  
+  .down {
+    color:#626262;
+    background-color: #F2F2F2;
+  }
+
+  .print_only { display: none; }
+  .hidden { display: none; }
+  .unhidden { display: block; }
+  
+}
+</style>
+<title>Nmap Scan Report - Scanned at Thu Nov 27 23:04:30 2025</title>
+<script type="text/javascript">
+     
+      
+                
+      function toggle(divID) {
+        var item = document.getElementById(divID);
+        if (item) {
+          item.className=(item.className=='hidden')?'unhidden':'hidden';
+        }
+      }
+           
+      function togglePorts(tableID,portState) {
+        var table = document.getElementById(tableID);    
+        var tbody = table.getElementsByTagName("tbody")[0];
+        var rows = tbody.getElementsByTagName("tr");
+        for (var i=0; i < rows.length; i++) {
+          var value = rows[i].getElementsByTagName("td")[2].firstChild.nodeValue;
+          if (value == portState) {
+            rows[i].style.display = (rows[i].style.display == 'none')?'':'none';
+          }
+        }
+      }
+      
+      function toggleAll(portState) {
+        var allTables = document.getElementsByTagName("table");
+        for (var c=0; c < allTables.length; c++) {
+          if (allTables[c].id != "") {
+            togglePorts(allTables[c].id, portState)
+          }
+        }
+      }
+      
+      function init (){
+        toggleAll('closed');
+        toggleAll('filtered');     
+      }     
+            
+      window.onload = init; 
+      
+      
+    
+    </script>
+</head>
+<body>
+<a name="top"></a><div id="container">
+<h1>Nmap Scan Report - Scanned at Thu Nov 27 23:04:30 2025</h1>
+<ul id="menu">
+<li><a href="#scansummary">Scan Summary</a></li>
+<li> | <a href="#host_192_168_10_1" class="up">192.168.10.1</a>
+</li>
+<li> | <a href="#host_192_168_10_2" class="up">192.168.10.2</a>
+</li>
+<li> | <a href="#host_192_168_10_10" class="up">192.168.10.10</a>
+</li>
+<li> | <a href="#host_192_168_10_20" class="up">DC-SERVER.phoanhhai.local (192.168.10.20)
+                  </a>
+</li>
+<li> | <a href="#host_192_168_10_30" class="up">wazuh.phoanhhai.local (192.168.10.30)
+                  </a>
+</li>
+<li> | <a href="#host_192_168_10_40" class="up">splunk.phoanhhai.local (192.168.10.40)
+                  </a>
+</li>
+<li> | <a href="#host_192_168_10_50" class="up">pos.phoanhhai.local (192.168.10.50)
+                  </a>
+</li>
+<li> | <a href="#host_192_168_10_101" class="up">192.168.10.101</a>
+</li>
+<li> | <a href="#host_192_168_10_254" class="up">192.168.10.254</a>
+</li>
+<li> | <a href="#postscript">Post-Scan Script Output</a>
+</li>
+</ul>
+<a name="scansummary"></a><hr class="print_only">
+<h2>Scan Summary</h2>
+<p>
+      Nmap 7.95 was initiated at Thu Nov 27 23:04:30 2025 with these arguments:<br><i>/usr/lib/nmap/nmap -sV -sC -O -oX scan.xml 192.168.10.0/24</i><br></p>
+<p>
+    Verbosity: 0; Debug level 0</p>
+<p>Nmap done at Thu Nov 27 23:08:40 2025; 256 IP addresses (9 hosts up) scanned in 250.64 seconds</p>
+<hr class="print_only">
+<a name="host_192_168_10_1"></a><h2 class="up">192.168.10.1<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.1" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.1
+            (ipv4)
+          </li>
+<li>00:50:56:C0:00:09 - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+
+<h3>Ports</h3>
+<p>The 996 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>996 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.10.1" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.1','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.1','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=TommyPC
+Not valid before: 2025-09-01T03:14:28
+Not valid after:  2026-03-03T03:14:28 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>rdp-ntlm-info </td>
+<td colspan="6"><pre>
+  Target_Name: TOMMYPC
+  NetBIOS_Domain_Name: TOMMYPC
+  NetBIOS_Computer_Name: TOMMYPC
+  DNS_Domain_Name: TommyPC
+  DNS_Computer_Name: TommyPC
+  Product_Version: 10.0.26100
+  System_Time: 2025-11-27T12:07:33+00:00 </pre></td>
+</tr>
+<tr class="open">
+<td>5800</td>
+<td>tcp</td>
+<td>open</td>
+<td>vnc-http </td>
+<td>syn-ack</td>
+<td>Ultr@VNC </td>
+<td> </td>
+<td>Name tommypc; resolution: 2560x1472; VNC TCP port: 5900 </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre> [tommypc]  </pre></td>
+</tr>
+<tr class="open">
+<td>5900</td>
+<td>tcp</td>
+<td>open</td>
+<td>vnc </td>
+<td>syn-ack</td>
+<td>VNC </td>
+<td> </td>
+<td>protocol 3.8 </td>
+</tr>
+<tr class="open">
+<td>8000</td>
+<td>tcp</td>
+<td>open</td>
+<td>http-alt </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Incredibuild </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-cors </td>
+<td colspan="6"><pre>HEAD GET POST PUT DELETE PATCH </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=TEMP INCREDIBUILD - REPLACE/organizationName=Incredibuild/stateOrProvinceName=N/A/countryName=IL
+Not valid before: 2021-01-01T10:00:42
+Not valid after:  2030-12-31T10:00:42 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  GetRequest: 
+    HTTP/1.1 200 OK
+    Cross-Origin-Opener-Policy: same-origin
+    Cross-Origin-Resource-Policy: same-origin
+    Origin-Agent-Cluster: ?1
+    Referrer-Policy: no-referrer
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    X-DNS-Prefetch-Control: off
+    X-Download-Options: noopen
+    X-Frame-Options: SAMEORIGIN
+    X-Permitted-Cross-Domain-Policies: none
+    X-XSS-Protection: 0
+    Access-Control-Allow-Origin: *
+    Accept-Ranges: bytes
+    Cache-Control: public, max-age=0
+    Last-Modified: Wed, 05 Mar 2025 00:31:00 GMT
+    ETag: W/"5c9-19563b681a0"
+    Content-Type: text/html; charset=UTF-8
+    Content-Length: 1481
+    Date: Thu, 27 Nov 2025 12:05:08 GMT
+    Connection: close
+    &lt;!doctype html&gt;&lt;html lang=""&gt;&lt;head&gt;&lt;meta charset="utf-8"/&gt;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"/&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"/&gt;&lt;title&gt;Incredibuild&lt;/title&gt;&lt;
+  HTTPOptions, RTSPRequest: 
+    HTTP/1.1 204 No Content
+    Cross-Origin-Opener-Policy: same-origin
+    Cross-Origin-Resource-Policy: same-origin
+    Origin-Agent-Cluster: ?1
+    Referrer-Policy: no-referrer
+    Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+    X-Content-Type-Options: nosniff
+    X-DNS-Prefetch-Control: off
+    X-Download-Options: noopen
+    X-Frame-Options: SAMEORIGIN
+    X-Permitted-Cross-Domain-Policies: none
+    X-XSS-Protection: 0
+    Access-Control-Allow-Origin: *
+    Access-Control-Allow-Methods: GET,HEAD,PUT,PATCH,POST,DELETE
+    Vary: Access-Control-Request-Headers
+    Content-Length: 0
+    Date: Thu, 27 Nov 2025 12:05:08 GMT
+    Connection: close </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>tls-alpn </td>
+<td colspan="6"><pre>
+  http/1.1 </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>3389/tcp</b> (<b>open</b>)  </li>
+<li>OS match: <b>Microsoft Windows 10 - 11</b> (<b>98%</b>)</li>
+<li>OS match: <b>Microsoft Windows Server 2016</b> (<b>91%</b>)</li>
+</ul>
+
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>-1s </pre></td>
+</tr>
+</table>
+<br><a href="javascript:toggle('metrics_192.168.10.1');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.1" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>808864 seconds  (last reboot: Tue Nov 18 14:27:23 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=255 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incremental</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_2"></a><h2 class="up">192.168.10.2<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.2" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.2
+            (ipv4)
+          </li>
+<li>00:0C:29:DD:3A:7C - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+
+<h3>Ports</h3>
+<p>The 996 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>996 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.10.2" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.2','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.2','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>22</td>
+<td>tcp</td>
+<td>open</td>
+<td>ssh </td>
+<td>syn-ack</td>
+<td>OpenSSH </td>
+<td>10.2 </td>
+<td>protocol 2.0 </td>
+</tr>
+<tr class="open">
+<td>53</td>
+<td>tcp</td>
+<td>open</td>
+<td>domain </td>
+<td>syn-ack</td>
+<td>Unbound </td>
+<td>1.24.1 </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>dns-nsid </td>
+<td colspan="6"><pre>
+  id.server: OPNsense.internal
+  bind.version: unbound 1.24.1 </pre></td>
+</tr>
+<tr class="open">
+<td>80</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>OPNsense </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>OPNsense </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  DNSVersionBindReqTCP: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html
+    Content-Length: 162
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:02 GMT
+    Server: OPNsense
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;400 Bad Request&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  FourOhFourRequest: 
+    HTTP/1.0 301 Moved Permanently
+    Location: https:///nice%20ports%2C/Trinity.txt.bak
+    Content-Length: 0
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:04:57 GMT
+    Server: OPNsense
+  GenericLines: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html
+    Content-Length: 162
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:04:57 GMT
+    Server: OPNsense
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;400 Bad Request&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  GetRequest, HTTPOptions: 
+    HTTP/1.0 301 Moved Permanently
+    Location: https:///
+    Content-Length: 0
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:04:52 GMT
+    Server: OPNsense
+  RTSPRequest: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html
+    Content-Length: 162
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:04:52 GMT
+    Server: OPNsense
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;400 Bad Request&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt; </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Did not follow redirect to https://192.168.10.2/ </pre></td>
+</tr>
+<tr class="open">
+<td>443</td>
+<td>tcp</td>
+<td>open</td>
+<td>https </td>
+<td>syn-ack</td>
+<td>OPNsense </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Login | OPNsense </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=OPNsense.internal/organizationName=OPNsense self-signed web certificate/stateOrProvinceName=Zuid-Holland/countryName=NL
+Subject Alternative Name: DNS:OPNsense.internal
+Not valid before: 2025-11-15T11:56:52
+Not valid after:  2026-12-17T11:56:52 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  GetRequest: 
+    HTTP/1.0 200 OK
+    Set-Cookie: PHPSESSID=5af4ee6a97c37875f95067cce6e03c41; path=/; secure; HttpOnly; SameSite=Lax
+    Set-Cookie: PHPSESSID=5af4ee6a97c37875f95067cce6e03c41; path=/; secure; HttpOnly
+    Expires: Thu, 19 Nov 1981 08:52:00 GMT
+    Cache-Control: no-store, no-cache, must-revalidate
+    Pragma: no-cache
+    Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval';
+    X-Frame-Options: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Referrer-Policy: same-origin
+    Content-type: text/html; charset=UTF-8
+    Content-Length: 1603
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:04:58 GMT
+    Server: OPNsense
+    &lt;!doctype html&gt;
+    &lt;html lang="en-US" class="no-js"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="robots" content="noindex,
+  HTTPOptions: 
+    HTTP/1.0 403 Forbidden
+    Set-Cookie: PHPSESSID=333e7dbd4017f14dcf4947299da854ec; path=/; secure; HttpOnly; SameSite=Lax
+    Expires: Thu, 19 Nov 1981 08:52:00 GMT
+    Cache-Control: no-store, no-cache, must-revalidate
+    Pragma: no-cache
+    Content-type: text/html; charset=UTF-8
+    Content-Length: 553
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:03 GMT
+    Server: OPNsense
+    &lt;html&gt;&lt;head&gt;&lt;title&gt;CSRF check failed&lt;/title&gt;
+    &lt;script&gt;
+    document ).ready(function() {
+    $.ajaxSetup({
+    'beforeSend': function(xhr) {
+    xhr.setRequestHeader("X-CSRFToken", "CLG5OK4aaQPhMCH-zuV6SQ" );
+    &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;p&gt;CSRF check failed. Your form session may have expired, or you may not have cookies enabled.&lt;/p&gt; </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-trane-info </td>
+<td colspan="6"><pre>Problem with XML parsing of /evox/about </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>OPNsense </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>22/tcp</b> (<b>open</b>)  </li>
+<li>OS match: <b>FreeBSD 11.2-RELEASE</b> (<b>97%</b>)</li>
+</ul>
+
+
+
+
+
+
+<br><a href="javascript:toggle('metrics_192.168.10.2');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.2" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>57 seconds  (last reboot: Thu Nov 27 23:07:30 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=262 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>All zeros</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_10"></a><h2 class="up">192.168.10.10<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.10" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.10
+            (ipv4)
+          </li>
+<li>00:0C:29:BB:6B:8C - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+
+<h3>Ports</h3>
+<p>The 993 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>993 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.10.10" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.10','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.10','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>22</td>
+<td>tcp</td>
+<td>open</td>
+<td>ssh </td>
+<td>syn-ack</td>
+<td>OpenSSH </td>
+<td>9.8 </td>
+<td>protocol 2.0 </td>
+</tr>
+<tr class="open">
+<td>80</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Did not follow redirect to https://192.168.10.10:443/ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  DNSStatusRequestTCP: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:05:00 GMT
+    connection: close
+    Request
+  DNSVersionBindReqTCP: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:04:59 GMT
+    connection: close
+    Request
+  FourOhFourRequest: 
+    HTTP/1.0 301 Moved Permanently
+    location: https://localhost:443/nice%20ports%2C/Trinity.txt.bak
+    vary: Accept-Encoding
+    date: Thu, 27 Nov 2025 12:04:56 GMT
+    connection: close
+    content-length: 0
+  GenericLines: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:04:57 GMT
+    connection: close
+    Request
+  GetRequest: 
+    HTTP/1.0 301 Moved Permanently
+    location: https://localhost:443/
+    vary: Accept-Encoding
+    date: Thu, 27 Nov 2025 12:04:52 GMT
+    connection: close
+    content-length: 0
+  HTTPOptions: 
+    HTTP/1.0 301 Moved Permanently
+    location: https://localhost:443/
+    vary: Accept-Encoding
+    date: Thu, 27 Nov 2025 12:04:53 GMT
+    connection: close
+    content-length: 0
+  RPCCheck: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:04:58 GMT
+    connection: close
+    Request
+  RTSPRequest: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:04:54 GMT
+    connection: close
+    Request
+  X11Probe: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:04:55 GMT
+    connection: close
+    Request </pre></td>
+</tr>
+<tr class="open">
+<td>443</td>
+<td>tcp</td>
+<td>open</td>
+<td>https </td>
+<td>syn-ack</td>
+<td>VMware ESXi SOAP API </td>
+<td>8.0.3 </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=localhost.localdomain/organizationName=VMware, Inc/stateOrProvinceName=California/countryName=US
+Subject Alternative Name: DNS:localhost.localdomain
+Not valid before: 2025-11-15T10:42:24
+Not valid after:  2037-05-16T10:42:24 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Site doesn't have a title (text/html). </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  FourOhFourRequest: 
+    HTTP/1.0 404 Not Found
+    date: Thu, 27 Nov 2025 12:04:59 GMT
+    content-security-policy: upgrade-insecure-requests
+    content-type: text/plain; charset=utf-8
+    strict-transport-security: max-age=31536000
+    x-content-type-options: nosniff
+    x-frame-options: DENY
+    x-xss-protection: 1
+    content-length: 0
+    x-envoy-upstream-service-time: 0
+    connection: close
+  GenericLines: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:05:00 GMT
+    connection: close
+    Request
+  GetRequest: 
+    HTTP/1.0 200 OK
+    date: Thu, 27 Nov 2025 12:04:58 GMT
+    content-security-policy: upgrade-insecure-requests
+    content-type: text/html
+    strict-transport-security: max-age=31536000
+    x-content-type-options: nosniff
+    x-frame-options: DENY
+    x-xss-protection: 1
+    content-length: 258
+    x-envoy-upstream-service-time: 1
+    vary: Accept-Encoding
+    connection: close
+    &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta http-equiv="content-type" content="text/html; charset=utf8"&gt;
+    &lt;meta http-equiv="refresh" content="0;URL='/ui'"/&gt;
+    &lt;/head&gt;
+    &lt;/html&gt;
+  HTTPOptions: 
+    HTTP/1.0 501 Not Implemented
+    date: Thu, 27 Nov 2025 12:04:58 GMT
+    content-security-policy: upgrade-insecure-requests
+    content-type: text/plain; charset=utf-8
+    strict-transport-security: max-age=31536000
+    x-content-type-options: nosniff
+    x-frame-options: DENY
+    x-xss-protection: 1
+    content-length: 0
+    x-envoy-upstream-service-time: 1
+    connection: close
+  tor-versions: 
+    HTTP/1.1 400 Bad Request
+    content-length: 11
+    content-type: text/plain
+    date: Thu, 27 Nov 2025 12:04:59 GMT
+    connection: close
+    Request </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>vmware-version </td>
+<td colspan="6"><pre>
+  Server version: VMware ESXi 8.0.3
+  Build: 24677879
+  Locale version: INTL 000
+  OS type: vmnix-x86
+  Product Line ID: embeddedEsx </pre></td>
+</tr>
+<tr class="open">
+<td>902</td>
+<td>tcp</td>
+<td>open</td>
+<td>vmware-auth </td>
+<td>syn-ack</td>
+<td>VMware Authentication Daemon </td>
+<td>1.10 </td>
+<td>Uses VNC, SOAP </td>
+</tr>
+<tr class="open">
+<td>8000</td>
+<td>tcp</td>
+<td>open</td>
+<td>http-alt </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>8300</td>
+<td>tcp</td>
+<td>open</td>
+<td>tmi </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>9080</td>
+<td>tcp</td>
+<td>open</td>
+<td>glrpc </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=localhost.localdomain/organizationName=VMware, Inc/stateOrProvinceName=California/countryName=US
+Subject Alternative Name: DNS:localhost.localdomain
+Not valid before: 2025-11-15T10:42:24
+Not valid after:  2037-05-16T10:42:24 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  GetRequest: 
+    HTTP/1.1 200 OK
+    Server: 
+    X-Frame-Options: SAMEORIGIN
+    Content-Type: text/xml
+    Content-Length: 0
+    Connection: close
+  HTTPOptions: 
+    HTTP/1.1 200 OK
+    Server: 
+    X-Frame-Options: SAMEORIGIN
+    Content-Type: text/xml; charset=utf-8
+    Content-Length: 0
+    Connection: close
+  RPCCheck, TerminalServerCookie: 
+    HTTP/1.1 400 Bad Request
+    Server: 
+    X-Frame-Options: SAMEORIGIN
+    Content-Type: application/soap+xml; charset=utf-8
+    Content-Length: 1615
+    Connection: close
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://vasa.vim.vmware.com/xsd" xmlns:placementPolicy="http://placement.policy.data.vasa.vim.vmware.com/xsd" xmlns:fault="http://fault.vasa.vim.vmware.com/xsd" xmlns:capability="http://capability.policy.data.vasa.vim.vmware.com/xsd" xmlns:profile="http://profile.policy.data.vasa.vim.vmware.com/xsd" xmlns:ns3="http://annotation.vasa.vim.vmware.com/xsd" xmlns:policy="http://policy.data.vasa.vim.vmware.com/xsd" xmlns:providerCapability="http://provider.capab </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>22/tcp</b> (<b>open</b>)  </li>
+<li>OS match: <b>VMware ESXi 7.0.3</b> (<b>92%</b>)</li>
+<li>OS match: <b>FreeBSD 8.2-STABLE</b> (<b>87%</b>)</li>
+<li>OS match: <b>NAS4Free (FreeBSD 9.1)</b> (<b>87%</b>)</li>
+<li>OS match: <b>FreeBSD 10.3-STABLE</b> (<b>86%</b>)</li>
+</ul>
+
+
+
+
+
+
+<br><a href="javascript:toggle('metrics_192.168.10.10');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.10" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>57 seconds  (last reboot: Thu Nov 27 23:07:30 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=184 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incremental</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_20"></a><h2 class="up">192.168.10.20 / DC-SERVER.phoanhhai.local<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.20" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.20
+            (ipv4)
+          </li>
+<li>00:0C:29:9F:0D:2F - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+<h3>Hostnames</h3>
+<ul>
+<li>DC-SERVER.phoanhhai.local (PTR)</li>
+</ul>
+<h3>Ports</h3>
+<p>The 987 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>987 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.10.20" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.20','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.20','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>53</td>
+<td>tcp</td>
+<td>open</td>
+<td>domain </td>
+<td>syn-ack</td>
+<td>Simple DNS Plus </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>88</td>
+<td>tcp</td>
+<td>open</td>
+<td>kerberos-sec </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Kerberos </td>
+<td> </td>
+<td>server time: 2025-11-27 12:04:52Z </td>
+</tr>
+<tr class="open">
+<td>135</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>139</td>
+<td>tcp</td>
+<td>open</td>
+<td>netbios-ssn </td>
+<td>syn-ack</td>
+<td>Microsoft Windows netbios-ssn </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: phoanhhai.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="open">
+<td>445</td>
+<td>tcp</td>
+<td>open</td>
+<td>microsoft-ds </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>464</td>
+<td>tcp</td>
+<td>open</td>
+<td>kpasswd5 </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>593</td>
+<td>tcp</td>
+<td>open</td>
+<td>ncacn_http </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC over HTTP </td>
+<td>1.0 </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>636</td>
+<td>tcp</td>
+<td>open</td>
+<td>tcpwrapped </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>3268</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: phoanhhai.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="open">
+<td>3269</td>
+<td>tcp</td>
+<td>open</td>
+<td>tcpwrapped </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>rdp-ntlm-info </td>
+<td colspan="6"><pre>
+  Target_Name: PHOANHHAI
+  NetBIOS_Domain_Name: PHOANHHAI
+  NetBIOS_Computer_Name: DC-SERVER
+  DNS_Domain_Name: phoanhhai.local
+  DNS_Computer_Name: DC-SERVER.phoanhhai.local
+  DNS_Tree_Name: phoanhhai.local
+  Product_Version: 10.0.26100
+  System_Time: 2025-11-27T12:07:34+00:00 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=DC-SERVER.phoanhhai.local
+Not valid before: 2025-11-15T18:48:56
+Not valid after:  2026-05-17T18:48:56 </pre></td>
+</tr>
+<tr class="open">
+<td>5985</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>53/tcp</b> (<b>open</b>)  </li>
+<li>OS match: <b>Microsoft Windows Server 2022</b> (<b>96%</b>)</li>
+<li>OS match: <b>Microsoft Windows Server 2016</b> (<b>91%</b>)</li>
+<li>OS match: <b>Microsoft Windows 11 21H2</b> (<b>90%</b>)</li>
+</ul>
+
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>smb2-time </td>
+<td><pre>
+  date: 2025-11-27T12:07:36
+  start_date: N/A </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-security-mode </td>
+<td><pre>
+  3:1:1: 
+    Message signing enabled and required </pre></td>
+</tr>
+<tr class="script">
+<td>nbstat </td>
+<td><pre>NetBIOS name: DC-SERVER, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:0c:29:9f:0d:2f (VMware) </pre></td>
+</tr>
+</table>
+<br><a href="javascript:toggle('metrics_192.168.10.20');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.20" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>661744 seconds  (last reboot: Thu Nov 20 07:19:23 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=259 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incremental</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_30"></a><h2 class="up">192.168.10.30 / wazuh.phoanhhai.local<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.30" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.30
+            (ipv4)
+          </li>
+<li>00:0C:29:78:46:52 - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+<h3>Hostnames</h3>
+<ul>
+<li>wazuh.phoanhhai.local (PTR)</li>
+</ul>
+<h3>Ports</h3>
+<p>The 998 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>998 ports replied with: <b>reset</b></p></li></ul>
+<table id="porttable_192.168.10.30" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.30','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.30','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>22</td>
+<td>tcp</td>
+<td>open</td>
+<td>ssh </td>
+<td>syn-ack</td>
+<td>OpenSSH </td>
+<td>10.0p2 Ubuntu 5ubuntu5 </td>
+<td>Ubuntu Linux; protocol 2.0 </td>
+</tr>
+<tr class="open">
+<td>443</td>
+<td>tcp</td>
+<td>open</td>
+<td>https </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>tls-alpn </td>
+<td colspan="6"><pre>
+  http/1.1 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Wazuh
+Requested resource was /app/login? </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=wazuh-dashboard/organizationName=Wazuh/countryName=US
+Subject Alternative Name: IP Address:127.0.0.1
+Not valid before: 2025-11-19T17:59:37
+Not valid after:  2035-11-17T17:59:37 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  FourOhFourRequest: 
+    HTTP/1.1 401 Unauthorized
+    osd-name: wazuh-siem
+    x-frame-options: sameorigin
+    content-type: application/json; charset=utf-8
+    cache-control: private, no-cache, no-store, must-revalidate
+    set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; HttpOnly; Path=/
+    content-length: 77
+    Date: Thu, 27 Nov 2025 12:05:04 GMT
+    Connection: close
+    {"statusCode":401,"error":"Unauthorized","message":"Authentication required"}
+  GetRequest: 
+    HTTP/1.1 302 Found
+    location: /app/login?
+    osd-name: wazuh-siem
+    x-frame-options: sameorigin
+    cache-control: private, no-cache, no-store, must-revalidate
+    set-cookie: security_authentication=; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Secure; HttpOnly; Path=/
+    content-length: 0
+    Date: Thu, 27 Nov 2025 12:05:04 GMT
+    Connection: close
+  HTTPOptions: 
+    HTTP/1.1 404 Not Found
+    osd-name: wazuh-siem
+    x-frame-options: sameorigin
+    content-type: application/json; charset=utf-8
+    cache-control: private, no-cache, no-store, must-revalidate
+    content-length: 60
+    Date: Thu, 27 Nov 2025 12:05:04 GMT
+    Connection: close
+    {"statusCode":404,"error":"Not Found","message":"Not Found"}
+  RTSPRequest: 
+    HTTP/1.1 404 Not Found
+    osd-name: wazuh-siem
+    x-frame-options: sameorigin
+    content-type: application/json; charset=utf-8
+    cache-control: private, no-cache, no-store, must-revalidate
+    content-length: 60
+    Date: Thu, 27 Nov 2025 12:05:09 GMT
+    Connection: close
+    {"statusCode":404,"error":"Not Found","message":"Not Found"}
+  SSLSessionReq: 
+    HTTP/1.1 400 Bad Request </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>22/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>1/tcp</b> (<b>closed</b>)  </li>
+<li>Used port: <b>35503/udp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>Linux 4.15 - 5.19</b> (<b>100%</b>)</li>
+</ul>
+
+
+
+
+
+
+<br><a href="javascript:toggle('metrics_192.168.10.30');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.30" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>3563722 seconds  (last reboot: Fri Oct 17 17:13:05 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=258 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>All zeros</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_40"></a><h2 class="up">192.168.10.40 / splunk.phoanhhai.local<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.40" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.40
+            (ipv4)
+          </li>
+<li>00:0C:29:1A:7F:27 - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+<h3>Hostnames</h3>
+<ul>
+<li>splunk.phoanhhai.local (PTR)</li>
+</ul>
+<h3>Ports</h3>
+<p>The 996 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>996 ports replied with: <b>reset</b></p></li></ul>
+<table id="porttable_192.168.10.40" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.40','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.40','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>22</td>
+<td>tcp</td>
+<td>open</td>
+<td>ssh </td>
+<td>syn-ack</td>
+<td>OpenSSH </td>
+<td>10.0p2 Ubuntu 5ubuntu5 </td>
+<td>Ubuntu Linux; protocol 2.0 </td>
+</tr>
+<tr class="open">
+<td>8000</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Splunkd httpd </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Site doesn't have a title (text/html; charset=UTF-8).
+Requested resource was http://splunk.phoanhhai.local:8000/en-US/account/login?return_to=%2Fen-US%2F </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Splunkd </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-robots.txt </td>
+<td colspan="6"><pre>1 disallowed entry 
+/ </pre></td>
+</tr>
+<tr class="open">
+<td>8088</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Splunkd httpd </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Splunkd </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>404 Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-robots.txt </td>
+<td colspan="6"><pre>1 disallowed entry 
+/ </pre></td>
+</tr>
+<tr class="open">
+<td>8089</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Splunkd httpd </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=SplunkServerDefaultCert/organizationName=SplunkUser
+Not valid before: 2025-11-19T06:05:03
+Not valid after:  2028-11-18T06:05:03 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Splunkd </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>splunkd </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-robots.txt </td>
+<td colspan="6"><pre>1 disallowed entry 
+/ </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>22/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>1/tcp</b> (<b>closed</b>)  </li>
+<li>Used port: <b>36292/udp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>Linux 4.15 - 5.19</b> (<b>100%</b>)</li>
+</ul>
+
+
+
+
+
+
+<br><a href="javascript:toggle('metrics_192.168.10.40');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.40" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>402641 seconds  (last reboot: Sun Nov 23 07:17:46 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=260 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>All zeros</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_50"></a><h2 class="up">192.168.10.50 / pos.phoanhhai.local<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.50" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.50
+            (ipv4)
+          </li>
+<li>00:0C:29:F9:7C:77 - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+<h3>Hostnames</h3>
+<ul>
+<li>pos.phoanhhai.local (PTR)</li>
+</ul>
+<h3>Ports</h3>
+<p>The 996 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>996 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.10.50" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.50','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.50','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>135</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>139</td>
+<td>tcp</td>
+<td>open</td>
+<td>netbios-ssn </td>
+<td>syn-ack</td>
+<td>Microsoft Windows netbios-ssn </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>445</td>
+<td>tcp</td>
+<td>open</td>
+<td>microsoft-ds </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td>Microsoft Terminal Services </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=POS-WIN11.phoanhhai.local
+Not valid before: 2025-11-15T10:58:42
+Not valid after:  2026-05-17T10:58:42 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>rdp-ntlm-info </td>
+<td colspan="6"><pre>
+  Target_Name: PHOANHHAI
+  NetBIOS_Domain_Name: PHOANHHAI
+  NetBIOS_Computer_Name: POS-WIN11
+  DNS_Domain_Name: phoanhhai.local
+  DNS_Computer_Name: POS-WIN11.phoanhhai.local
+  DNS_Tree_Name: phoanhhai.local
+  Product_Version: 10.0.26100
+  System_Time: 2025-11-27T12:07:37+00:00 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>135/tcp</b> (<b>open</b>)  </li>
+<li>OS match: <b>Microsoft Windows 11 21H2</b> (<b>96%</b>)</li>
+<li>OS match: <b>Microsoft Windows 10</b> (<b>91%</b>)</li>
+<li>OS match: <b>Microsoft Windows 10 1607</b> (<b>91%</b>)</li>
+<li>OS match: <b>Microsoft Windows Server 2022</b> (<b>90%</b>)</li>
+<li>OS match: <b>Microsoft Windows Server 2008 SP1</b> (<b>88%</b>)</li>
+<li>OS match: <b>Microsoft Windows Phone 7.5 or 8.0</b> (<b>88%</b>)</li>
+<li>OS match: <b>Microsoft Windows Embedded Standard 7</b> (<b>87%</b>)</li>
+<li>OS match: <b>Microsoft Windows 10 1511 - 1607</b> (<b>86%</b>)</li>
+</ul>
+
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>nbstat </td>
+<td><pre>NetBIOS name: POS-WIN11, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 00:0c:29:f9:7c:77 (VMware) </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-time </td>
+<td><pre>
+  date: 2025-11-27T12:07:45
+  start_date: N/A </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-security-mode </td>
+<td><pre>
+  3:1:1: 
+    Message signing enabled and required </pre></td>
+</tr>
+</table>
+<br><a href="javascript:toggle('metrics_192.168.10.50');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.50" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>549856 seconds  (last reboot: Fri Nov 21 14:24:11 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=260 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incremental</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_101"></a><h2 class="up">192.168.10.101<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.101" class="unhidden">
+<h3>Address</h3>
+<ul><li>192.168.10.101
+            (ipv4)
+          </li></ul>
+
+
+<h3>Ports</h3>
+<p>The 998 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>998 ports replied with: <b>reset</b></p></li></ul>
+<table id="porttable_192.168.10.101" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.101','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.101','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>22</td>
+<td>tcp</td>
+<td>open</td>
+<td>ssh </td>
+<td>syn-ack</td>
+<td>OpenSSH </td>
+<td>10.2p1 Debian 2 </td>
+<td>protocol 2.0 </td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td>Microsoft Terminal Service </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>22/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>1/tcp</b> (<b>closed</b>)  </li>
+<li>Used port: <b>34374/udp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>Linux 2.6.32</b> (<b>100%</b>)</li>
+<li>OS match: <b>Linux 5.0 - 6.2</b> (<b>100%</b>)</li>
+</ul>
+
+
+
+
+
+
+<br><a href="javascript:toggle('metrics_192.168.10.101');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.101" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>localhost-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>325191 seconds  (last reboot: Mon Nov 24 04:48:49 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>0 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=258 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>All zeros</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_10_254"></a><h2 class="up">192.168.10.254<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.10.254" class="unhidden">
+<h3>Address</h3>
+<ul>
+<li>192.168.10.254
+            (ipv4)
+          </li>
+<li>00:50:56:A1:B2:00 - VMware 
+            (mac)
+          </li>
+</ul>
+
+
+
+<h3>Ports</h3>
+<p>The 997 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>997 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.10.254" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.10.254','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.10.254','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+<tr class="open">
+<td>53</td>
+<td>tcp</td>
+<td>open</td>
+<td>domain </td>
+<td>syn-ack</td>
+<td>Unbound </td>
+<td>1.24.1 </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>dns-nsid </td>
+<td colspan="6"><pre>
+  id.server: OPNsense.internal
+  bind.version: unbound 1.24.1 </pre></td>
+</tr>
+<tr class="open">
+<td>80</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>OPNsense </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>OPNsense </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Did not follow redirect to https://192.168.10.254/ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  DNSVersionBindReqTCP: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html
+    Content-Length: 162
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:13 GMT
+    Server: OPNsense
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;400 Bad Request&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  FourOhFourRequest: 
+    HTTP/1.0 301 Moved Permanently
+    Location: https:///nice%20ports%2C/Trinity.txt.bak
+    Content-Length: 0
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:08 GMT
+    Server: OPNsense
+  GenericLines: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html
+    Content-Length: 162
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:08 GMT
+    Server: OPNsense
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;400 Bad Request&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+  GetRequest, HTTPOptions: 
+    HTTP/1.0 301 Moved Permanently
+    Location: https:///
+    Content-Length: 0
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:03 GMT
+    Server: OPNsense
+  RTSPRequest: 
+    HTTP/1.0 400 Bad Request
+    Content-Type: text/html
+    Content-Length: 162
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:03 GMT
+    Server: OPNsense
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;400 Bad Request&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1&gt;400 Bad Request&lt;/h1&gt;
+    &lt;/body&gt;
+    &lt;/html&gt; </pre></td>
+</tr>
+<tr class="open">
+<td>443</td>
+<td>tcp</td>
+<td>open</td>
+<td>https </td>
+<td>syn-ack</td>
+<td>OPNsense </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Login | OPNsense </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>fingerprint-strings </td>
+<td colspan="6"><pre>
+  GetRequest: 
+    HTTP/1.0 200 OK
+    Set-Cookie: PHPSESSID=fb976a898a2d88d2ab671fc0ada25ac4; path=/; secure; HttpOnly; SameSite=Lax
+    Set-Cookie: PHPSESSID=fb976a898a2d88d2ab671fc0ada25ac4; path=/; secure; HttpOnly
+    Expires: Thu, 19 Nov 1981 08:52:00 GMT
+    Cache-Control: no-store, no-cache, must-revalidate
+    Pragma: no-cache
+    Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval';
+    X-Frame-Options: SAMEORIGIN
+    X-Content-Type-Options: nosniff
+    X-XSS-Protection: 1; mode=block
+    Referrer-Policy: same-origin
+    Content-type: text/html; charset=UTF-8
+    Content-Length: 1603
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:09 GMT
+    Server: OPNsense
+    &lt;!doctype html&gt;
+    &lt;html lang="en-US" class="no-js"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="robots" content="noindex,
+  HTTPOptions: 
+    HTTP/1.0 403 Forbidden
+    Set-Cookie: PHPSESSID=073c751ea655e5d02641d71420427c94; path=/; secure; HttpOnly; SameSite=Lax
+    Expires: Thu, 19 Nov 1981 08:52:00 GMT
+    Cache-Control: no-store, no-cache, must-revalidate
+    Pragma: no-cache
+    Content-type: text/html; charset=UTF-8
+    Content-Length: 553
+    Connection: close
+    Date: Thu, 27 Nov 2025 12:05:14 GMT
+    Server: OPNsense
+    &lt;html&gt;&lt;head&gt;&lt;title&gt;CSRF check failed&lt;/title&gt;
+    &lt;script&gt;
+    document ).ready(function() {
+    $.ajaxSetup({
+    'beforeSend': function(xhr) {
+    xhr.setRequestHeader("X-CSRFToken", "tdK-YM-o2QYmRbkl-iGHpA" );
+    &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;p&gt;CSRF check failed. Your form session may have expired, or you may not have cookies enabled.&lt;/p&gt; </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>TLS randomness does not represent time </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>OPNsense </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=OPNsense.internal/organizationName=OPNsense self-signed web certificate/stateOrProvinceName=Zuid-Holland/countryName=NL
+Subject Alternative Name: DNS:OPNsense.internal
+Not valid before: 2025-11-23T04:00:43
+Not valid after:  2026-12-25T04:00:43 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-trane-info </td>
+<td colspan="6"><pre>Problem with XML parsing of /evox/about </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>53/tcp</b> (<b>open</b>)  </li>
+<li>OS match: <b>FreeBSD 11.2-RELEASE</b> (<b>93%</b>)</li>
+</ul>
+
+
+
+
+
+
+<br><a href="javascript:toggle('metrics_192.168.10.254');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.10.254" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>arp-response</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>56 seconds  (last reboot: Thu Nov 27 23:07:31 2025)
+        </td>
+</tr>
+<tr>
+<td>Network Distance</td>
+<td>1 hops</td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=254 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>All zeros</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="postscript"></a><h2>Post-Scan Script Output</h2>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>
+  0s: 
+    192.168.10.50 (pos.phoanhhai.local)
+    192.168.10.1
+    192.168.10.20 (DC-SERVER.phoanhhai.local)</pre></td>
+</tr>
+</table>
+</div>
+<div id="menubox" class="noprint">
+<a href="#top"><small>Go to top</small></a><br><a href="javascript:toggleAll('closed');"><small>Toggle Closed Ports</small></a><br><a href="javascript:toggleAll('filtered');"><small>Toggle Filtered Ports</small></a>
+</div>
+</body>
+</html>
