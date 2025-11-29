@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 ![[Pasted image 20251126150322.png]]
+=======
+![[Pasted image 20251126150322.png|425]]
+>>>>>>> origin/main
 
 ARP Scan was not detected by Suricata IPS. Checked there is no scanning rule relating to -PR and ARP.
 
 Reason: 
+<<<<<<< HEAD
 **ARP is NOT IP traffic**
 ARP frames:
 - Are **Layer 2**, not Layer 3
@@ -13,3 +18,44 @@ ARP frames:
 
 Lesson learned: ARP Sweep more stealthy as it's layer 2 and cannot be detected by Layer 3 firewalls. But Palo Alto and Fortinet+FortiSwitch can still detect them.
 ![[Pasted image 20251126150916.png]]
+=======
+**ARP (layer2) is NOT IP traffic (layer 3), they are not meant to be detected by L3 Suricata**
+
+See [[6 Extras about ARP scan & detection]]
+
+
+```bash
+sudo nmap -sV -sC -O 192.168.10.0/24 -oX scan.xml && xsltproc /usr/share/nmap/nmap.xsl scan.xml > scan.html
+```
+
+```bash
+sudo nmap -sV -sC -O 192.168.10.0/24 -T4
+```
+
+
+![[Pasted image 20251128002741.png]]
+
+
+>>>>>>> origin/main
+![[Pasted image 20251126150322.png|425]]
+
+ARP Scan was not detected by Suricata IPS. Checked there is no scanning rule relating to -PR and ARP.
+
+Reason: 
+**ARP (layer2) is NOT IP traffic (layer 3), they are not meant to be detected by L3 Suricata**
+
+See [[6 Extras about ARP scan & detection]]
+
+
+```bash
+sudo nmap -sV -sC -O 192.168.10.0/24 -oX scan.xml && xsltproc /usr/share/nmap/nmap.xsl scan.xml > scan.html
+```
+
+```bash
+sudo nmap -sV -sC -O 192.168.10.0/24 -T4
+```
+
+
+![[Pasted image 20251128002741.png]]
+
+
