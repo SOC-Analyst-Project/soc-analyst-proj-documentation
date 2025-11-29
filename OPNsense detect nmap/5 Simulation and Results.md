@@ -120,3 +120,9 @@ Wazuh alert
 ![[Pasted image 20251129172649.png]]
 
 Splunk
+
+issue: chrony running, but massive time drift
+This is very likely caused by nested virtualization
+Your VM’s virtual hardware clock jumped/drifted heavily (ESXi timekeeping issue), AND chrony could not step-correct it because NTP servers did not form a clear majority.
+![[Pasted image 20251129173859.png]]
+solution: Try "sync guest time with host"
