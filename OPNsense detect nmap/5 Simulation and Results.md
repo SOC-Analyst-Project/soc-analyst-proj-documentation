@@ -29,8 +29,20 @@ sudo nmap -sV -sC -O 192.168.10.0/24 -oX scan.xml && xsltproc /usr/share/nmap/nm
 sudo nmap -sV -sC -O 192.168.10.0/24 -T4
 ```
 
-
 ![[Pasted image 20251128002741.png]]
+Result is in the attachment [[scan.html]]
+
+As an attacker, we are interested to find out more about the DC-SERVER.phoanhhai.local (192.168.10.20)
+
+```
+sudo nmap -A -T4 192.168.10.20
+
+# which is equivant to sudo nmap -sV -sC -O --traceroute -T4 192.168.10.20
+# -sC = same as --script=default, default NSE script
+# --traceroute = path to the host
+# -sV = enumerate service banners
+# -O = OS fingerprinting
+```
 
 
 
