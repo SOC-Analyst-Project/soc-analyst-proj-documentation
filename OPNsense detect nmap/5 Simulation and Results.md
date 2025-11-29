@@ -1,13 +1,15 @@
-<<<<<<< HEAD
+
 ![[Pasted image 20251126150322.png]]
 =======
 ![[Pasted image 20251126150322.png|425]]
->>>>>>> origin/main
+
+
+
+
 
 ARP Scan was not detected by Suricata IPS. Checked there is no scanning rule relating to -PR and ARP.
 
 Reason: 
-<<<<<<< HEAD
 **ARP is NOT IP traffic**
 ARP frames:
 - Are **Layer 2**, not Layer 3
