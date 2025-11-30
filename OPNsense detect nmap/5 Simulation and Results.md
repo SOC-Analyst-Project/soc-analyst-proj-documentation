@@ -128,3 +128,5 @@ index=wazuh-alerts "agent.ip"="192.168.10.254" "rule.groups{}"=suricata
 ```
 
 ![[Pasted image 20251129175636.png]]
+
+To walk one step further, we can add custom rule on wazuh to add MITRE tagging and severity tagging, and multiple event at a similar time will appear on splunk as a single event.
