@@ -11,7 +11,7 @@ Lesson learned: ARP Sweep more stealthy as it's layer 2 and cannot be detected b
 
 # Zenarmor
 OPNsense Zenarmor Sensei can detect ARP scans
-![[Pasted image 20251126150916.png]]
+![Pasted image 20251126150916](Pasted%20image%2020251126150916.png)
 
 https://docs.opnsense.org/vendor/sunnyvalley/zenarmor_install.html
 

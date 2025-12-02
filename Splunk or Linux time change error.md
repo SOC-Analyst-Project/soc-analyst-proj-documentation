@@ -1,7 +1,7 @@
 issue: chrony running, but massive time drift
 This is very likely caused by nested virtualization
 Your VM’s virtual hardware clock jumped/drifted heavily (ESXi timekeeping issue), AND chrony could not step-correct it because NTP servers did not form a clear majority.
-![[Pasted image 20251129173859.png]]
+![Pasted image 20251129173859](Pasted%20image%2020251129173859.png)
 The solution: 
 sync guest time with host is no good because it will compete with chrony
 the better fix is to change chrony config
@@ -16,4 +16,4 @@ makestep 1.0 -1 # makestep 1 3
 ```
 
 fixed
-![[Pasted image 20251129175546.png]]
+![Pasted image 20251129175546](Pasted%20image%2020251129175546.png)
