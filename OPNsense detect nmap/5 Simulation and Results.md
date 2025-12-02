@@ -4,19 +4,19 @@ Standard ping sweep
 ```
 sudo nmap -sn 192.168.10.0/24 -T4
 ```
-![[Pasted image 20251129163527.png]]
+![Pasted image 20251129163527](Pasted%20image%2020251129163527.png)
 
 ARP ping sweep (-PR)
 ```
 sudo nmap -PR -sn 192.168.10.0/24 -T4
 ```
-![[Pasted image 20251126150322.png|425]]
+![425](Pasted%20image%2020251126150322.png)
 
 
 ARP Scan was not detected by Suricata IPS. Checked there is no scanning rule relating to -PR and ARP.
 **Reason:** 
 **ARP (layer2) is NOT IP traffic (layer 3), they are not meant to be detected by L3 Suricata**
-See [[6 Extras about ARP scan & detection]]
+See [6 Extras about ARP scan & detection](6%20Extras%20about%20ARP%20scan%20&%20detection.md)
 
 ## 5.2 Service detection
 -sV on the whole subnet
@@ -29,8 +29,8 @@ sudo nmap -sV -sC -O 192.168.10.0/24 -oX scan.xml && xsltproc /usr/share/nmap/nm
 sudo nmap -sV -sC -O 192.168.10.0/24 -T4
 ```
 
-![[Pasted image 20251128002741.png]]
-Result is in the attachment [[scan.html]]
+![Pasted image 20251128002741](Pasted%20image%2020251128002741.png)
+Result is in the attachment [scan](scan.html)
 
 As an attacker, we are interested to find out more about the DC-SERVER.phoanhhai.local (192.168.10.20)
 
@@ -114,10 +114,10 @@ Nmap done: 1 IP address (1 host up) scanned in 62.56 seconds
 ```
 
 Suricata alert
-![[Pasted image 20251129172414.png]]
+![Pasted image 20251129172414](Pasted%20image%2020251129172414.png)
 
 Wazuh alert
-![[Pasted image 20251129172649.png]]
+![Pasted image 20251129172649](Pasted%20image%2020251129172649.png)
 
 Splunk
 ```SPL
@@ -127,7 +127,7 @@ index=wazuh-alerts "agent.ip"="192.168.10.254" "rule.groups{}"=suricata
 | sort _time desc
 ```
 
-![[Pasted image 20251129175636.png]]
+![Pasted image 20251129175636](Pasted%20image%2020251129175636.png)
 
 To walk one step further, we can add custom rule on wazuh to add MITRE tagging and severity tagging, and multiple event at a similar time will appear on splunk as a single event.
 
