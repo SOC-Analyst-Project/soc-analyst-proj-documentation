@@ -1,12 +1,12 @@
 see also [obsolete_OPNsense syslog forwarding to Wazuh](obsolete_OPNsense%20syslog%20forwarding%20to%20Wazuh.md)
 
 
-![Pasted image 20251118142052](Pasted%20image%2020251118142052.png)
+![Pasted image 20251118142052](resources/Pasted%20image%2020251118142052.png)
 
-![Pasted image 20251119160936](Pasted%20image%2020251119160936.png)
+![Pasted image 20251119160936](resources/Pasted%20image%2020251119160936.png)
 
 
-![Pasted image 20251119160436](Pasted%20image%2020251119160436.png)
+![Pasted image 20251119160436](resources/Pasted%20image%2020251119160436.png)
 # Guide to configure OPNsense
 
 # ✅ 1. Confirm VMware Workstation Settings (CRITICAL)
