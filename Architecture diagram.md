@@ -1,1 +1,1 @@
-![archi-diagram-v3](archi-diagram-v3.png)
+![archi-diagram-v3](resources/archi-diagram-v3.png)
