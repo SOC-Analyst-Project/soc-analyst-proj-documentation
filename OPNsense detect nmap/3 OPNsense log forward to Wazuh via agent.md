@@ -8,4 +8,4 @@ refresh the page, and Wazuh Agent will appear under "services"
 
 It can be see in Wazuh dashboard too. 
 
-![Pasted image 20251120205055](resources/Pasted%20image%2020251120205055.png)
+![Pasted image 20251120205055](resources/resources/Pasted%20image%2020251120205055.png)

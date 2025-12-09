@@ -17,4 +17,4 @@ makestep 1.0 -1 # makestep 1 3
 ```
 
 fixed
-![Pasted image 20251129175546](resources/Pasted%20image%2020251129175546.png)
+![Pasted image 20251129175546](resources/resources/Pasted%20image%2020251129175546.png)

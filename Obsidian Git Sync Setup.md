@@ -13,10 +13,7 @@
 1. Disable Wikilinks as github does not support.
 2. Set Links to relative path
 3. If forgot to set, can convert using Obsidian Link Converter plugin
-![525](resources/Pasted%20image%2020251119205016.png)
-# Recommended: 
-Pull every 5 minute, commit & sync 5 minute after edit
-![Pasted image 20251122202055](resources/Pasted%20image%2020251122202055.png)
+![525](resoresources/Pasted%20image%2020251122202055.png)
 
 ## Troubleshoot: Merge error "Obsidian Git Sync Setup"
 (Find obsidian vault in explorer and open it with vscode)
