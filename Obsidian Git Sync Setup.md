@@ -13,6 +13,7 @@
 1. Disable Wikilinks as github does not support.
 2. Set Links to relative path
 3. If forgot to set, can convert using Obsidian Link Converter plugin
+4. Add .gitignore
 ![525](resources/Pasted%20image%2020251119205016.png)
 # Recommended: 
 Pull every 5 minute, commit & sync 5 minute after edit
